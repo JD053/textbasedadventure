@@ -1,10 +1,4 @@
 #!/bin/bash
-echo "# Text-Based-Adventure-" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git remote add origin https://github.com/JD053/Text-Based-Adventure-.git
-git push -u origin master
 
 echo -n "Enter a number between 1 and 3 inclusive > "
 read character
