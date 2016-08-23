@@ -1,0 +1,37 @@
+#!/bin/bash
+echo "# Text-Based-Adventure-" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/JD053/Text-Based-Adventure-.git
+git push -u origin master
+
+echo -n "Enter a number between 1 and 3 inclusive > "
+read character
+case $character in
+	1 ) echo "you entered one. "
+	;;
+	2 ) echo "You entered two. "
+	;;
+	3 ) echo "You entered three. "
+	;;
+	* ) echo "You did not enter a number"
+	echo "Between 1 and 3"
+esac
+
+until [[  $weapon == "sword" ]] || [[ $weapon == "spear" ]] || [[ $weapon == "dagger" ]]; do
+
+echo "Pick a weapon:"
+read weapon 
+
+	case $weapon in 
+		sword ) echo "You picked the sword"
+		;;
+		spear ) echo "You picked the spear"
+		;;
+		dagger ) echo "You picked the dagger"
+		;;
+		* ) echo "Your fun is wrong"
+		;;
+	esac 
+done 
