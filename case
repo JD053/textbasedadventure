@@ -1,5 +1,7 @@
 #!/bin/bash
 
+$health == 100
+
 echo "What is your name traveller"
 read traveller
 
@@ -8,7 +10,7 @@ echo ""
 
 until [[ $race == "human" ]] || [[ $race == "elf" ]] || [[ $race == "dwarf" ]]; do
 
-echo "Greetings $traveller, may I ask where you orignate from?"
+echo "Greetings $traveller, may I ask what race you orignate from?"
 read race
 
 	case $race in
@@ -28,7 +30,7 @@ echo ""
 
 until [[  $weapon == "sword" ]] || [[ $weapon == "spear" ]] || [[ $weapon == "dagger" ]]; do
 
-echo "Pick a weapon:"
+echo "What is your  weapon of choice?:"
 read weapon 
 
 	case $weapon in 
@@ -42,3 +44,36 @@ read weapon
 		;;
 	esac 
 done 
+
+echo "Thank you $traveller, your journey may now begin"
+
+clear
+banner "SENSOU NO"
+banner " SENSHI  "
+
+echo "Your vision fades in"
+echo "As you look around you can see that you're within the mits of a battle"
+echo "A horse gallops past your right, cutting down soliders, and tramapling others"
+echo "Your hands tense and your holding something, as you look down you see a $weapon in your hands"
+echo "The muffled sounds of war around you become clear, you hear screaming behind you"
+echo "You turn around seeing a soldier running at you with a rasied sword"
+
+until [[ $fstatk == "dodge" ]] || [[ $fstatk == "block" ]] || [[ $fstatk == "attack" ]]; do
+
+#enemy health 
+enehlt == 20
+
+echo "What do you do?"
+read fstatk
+#first attack
+	case $fstatk in
+		dodge ) echo "you roll to your left just barely avoiding the attack"
+		;;
+		block ) echo "You put your $weapon in front of the incoming attack, stopping the blades inches from your face"
+		;;
+		attack ) dmg == [ ( $RANDOM % 20 ) + 1 )] echo "`20 - dmg`"
+		;;
+		* ) echo "You take `$health == $health -[ ( $RANDOM % 20 ) + 1 ) ]`"
+		;; 
+	esac 
+done
