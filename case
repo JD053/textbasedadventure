@@ -61,7 +61,7 @@ echo "You turn around seeing a soldier running at you with a rasied sword"
 until [[ $fstatk == "dodge" ]] || [[ $fstatk == "block" ]] || [[ $fstatk == "attack" ]]; do
 
 #enemy health 
-enehlt == 20
+$enehlt == 20
 
 echo "What do you do?"
 read fstatk
@@ -71,7 +71,7 @@ read fstatk
 		;;
 		block ) echo "You put your $weapon in front of the incoming attack, stopping the blades inches from your face"
 		;;
-		attack ) dmg == [ ( $RANDOM % 20 ) + 1 )] echo "`20 - dmg`"
+		attack ) $dmg == [ ( $RANDOM % 20 ) + 1 )] echo "`20 - $dmg`"
 		;;
 		* ) echo "You take `$health == $health -[ ( $RANDOM % 20 ) + 1 ) ]`"
 		;; 
