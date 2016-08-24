@@ -1,17 +1,30 @@
 #!/bin/bash
 
-echo -n "Enter a number between 1 and 3 inclusive > "
-read character
-case $character in
-	1 ) echo "you entered one. "
-	;;
-	2 ) echo "You entered two. "
-	;;
-	3 ) echo "You entered three. "
-	;;
-	* ) echo "You did not enter a number"
-	echo "Between 1 and 3"
-esac
+echo "What is your name traveller"
+read traveller
+
+sleep 1
+echo ""
+
+until [[ $race == "human" ]] || [[ $race == "elf" ]] || [[ $race == "dwarf" ]]; do
+
+echo "Greetings $traveller, may I ask where you orignate from?"
+read race
+
+	case $race in
+		human ) echo "Oh so you're a human"
+		;;
+		elf ) echo "An elf hmm"
+		;;
+		dwarf ) echo "A Dwarf, rare to see one out of the moutians"
+		;;
+		* ) echo "I'm sorry traveller, this race doesn't exist in this world"
+		;;
+	esac 
+done 
+
+sleep 1
+echo ""
 
 until [[  $weapon == "sword" ]] || [[ $weapon == "spear" ]] || [[ $weapon == "dagger" ]]; do
 
