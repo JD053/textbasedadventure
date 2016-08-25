@@ -1,6 +1,5 @@
 #!/bin/bash
-
-$health == 100
+[[ $health = 100 ]]
 
 echo "What is your name traveller"
 read traveller
@@ -46,6 +45,7 @@ read weapon
 done 
 
 echo "Thank you $traveller, your journey may now begin"
+echo "Progress saved" && echo "$traveller" || "$race" || "$weapon" >>  storedchoice
 
 clear
 banner "SENSOU NO"
