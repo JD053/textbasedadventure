@@ -24,6 +24,8 @@ Enable the ssh-agent
 Step 4:
 Once the agent has been enabled you will need to add the ssh key to the ssh-agent.
 
+This is done by using the following code: ssh-add ~/.ssh/id_rsa
+
 Step 5:
 Finally you'll need to add the ssh key to your account.
 
