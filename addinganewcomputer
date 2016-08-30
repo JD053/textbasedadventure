@@ -1,0 +1,36 @@
+Step 1: 
+Check if an ssh key exists within the computer already.
+
+Open the terminal
+
+Enter (ls -al ~/.ssh) 
+
+if there isn't one then one must be generated
+
+Step 2:
+Enter into the terminal (ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+
+this will create a new key
+
+a line will appear asking you about where to save the file, (jsut press enter to accept the default location)
+
+create a passcode of anything
+
+Step 3: 
+Enable the ssh-agent
+
+(eval $(ssh-agent -s))
+
+Step 4:
+Once the agent has been enabled you will need to add the ssh key to the ssh-agent.
+
+Step 5:
+Finally you'll need to add the ssh key to your account.
+
+Click on the cog next to your profiles name on your github account
+
+Then go on to the settings part.
+
+Head to the SSH and GPG keys section
+
+Add a new ssh keys and enter in the information as neccassary.
