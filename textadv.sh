@@ -52,16 +52,39 @@ banner "SENSOU NO"
 banner " SENSHI  "
 
 echo "Your vision fades in"
+
+sleep 1
+echo ""
+
 echo "As you look around you can see that you're within the mits of a battle"
+
+sleep 1
+echo ""
+
 echo "A horse gallops past your right, cutting down soliders, and tramapling others"
+
+sleep 1
+echo ""
+
 echo "Your hands tense and your holding something, as you look down you see a $weapon in your hands"
+
+sleep 1
+echo ""
+
 echo "The muffled sounds of war around you become clear, you hear screaming behind you"
+
+sleep 1
+echo ""
+
 echo "You turn around seeing a soldier running at you with a rasied sword"
+
+sleep 1
+echo ""
 
 until [[ $fstatk == "dodge" ]] || [[ $fstatk == "block" ]] || [[ $fstatk == "attack" ]]; do
 
 #enemy health 
-$enehlt == 20
+[[ $enehlt == 20 ]]
 
 echo "What do you do?"
 read fstatk
@@ -71,9 +94,9 @@ read fstatk
 		;;
 		block ) echo "You put your $weapon in front of the incoming attack, stopping the blades inches from your face"
 		;;
-		attack ) $dmg == [ ( $RANDOM % 20 ) + 1 )] echo "`20 - $dmg`"
+		attack ) [[ $dmg == rand -N 1 -M 20 ]] echo "20 - $dmg"
 		;;
-		* ) echo "You take `$health == $health -[ ( $RANDOM % 20 ) + 1 ) ]`"
+		* ) echo "You take `$health - rand -N 1 -M 20`"
 		;; 
 	esac 
 done
