@@ -88,13 +88,14 @@ until [[ $fstatk == "dodge" ]] || [[ $fstatk == "block" ]] || [[ $fstatk == "att
 
 echo "What do you do?"
 read fstatk
+dmg=$(( (RANDOM % 20) + 1))
 #first attack
 	case $fstatk in
 		dodge ) echo "you roll to your left just barely avoiding the attack"
 		;;
 		block ) echo "You put your $weapon in front of the incoming attack, stopping the blades inches from your face"
 		;;
-		attack ) [[ $dmg == rand -N 1 -M 20 ]] echo "20 - $dmg"
+		attack ) echo "20 - $dmg"
 		;;
 		* ) echo "You take `$health - rand -N 1 -M 20`"
 		;; 
