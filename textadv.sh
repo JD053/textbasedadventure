@@ -1,12 +1,14 @@
 #!/bin/bash
-[[ $health = 100 ]]
+health=100
 
+#playername 
 echo "What is your name traveller"
 read traveller
 
 sleep 1
 echo ""
 
+#race selection 
 until [[ $race == "human" ]] || [[ $race == "elf" ]] || [[ $race == "dwarf" ]]; do
 
 echo "Greetings $traveller, may I ask what race you orignate from?"
@@ -27,6 +29,7 @@ done
 sleep 1
 echo ""
 
+#weapon selection
 until [[  $weapon == "sword" ]] || [[ $weapon == "spear" ]] || [[ $weapon == "dagger" ]]; do
 
 echo "What is your  weapon of choice?:"
@@ -45,7 +48,7 @@ read weapon
 done 
 
 echo "Thank you $traveller, your journey may now begin"
-echo "Progress saved" && echo "$traveller" || "$race" || "$weapon" >>  storedchoice
+echo "Progress saved" && echo "$traveller" || "$race" || "$weapon" >>  storedchoices
 
 clear
 banner "SENSOU NO"
@@ -84,11 +87,12 @@ echo ""
 until [[ $fstatk == "dodge" ]] || [[ $fstatk == "block" ]] || [[ $fstatk == "attack" ]]; do
 
 #enemy health 
-[[ $enehlt == 20 ]]
+enehlt=20
 
 echo "What do you do?"
 read fstatk
 dmg=$(( (RANDOM % 20) + 1))
+healthloss=$(( (RANDOM % 20) + 1))
 #first attack
 	case $fstatk in
 		dodge ) echo "you roll to your left just barely avoiding the attack"
@@ -97,7 +101,9 @@ dmg=$(( (RANDOM % 20) + 1))
 		;;
 		attack ) echo "20 - $dmg"
 		;;
-		* ) echo "You take `$health - rand -N 1 -M 20`"
+		* ) echo "You take `$health - $healthloss` damage"
 		;; 
 	esac 
 done
+
+if 
