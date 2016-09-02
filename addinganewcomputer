@@ -1,4 +1,4 @@
-Step 1: 
+tep 1: 
 Check if an ssh key exists within the computer already.
 
 Open the terminal
@@ -36,3 +36,18 @@ Then go on to the settings part.
 Head to the SSH and GPG keys section
 
 Add a new ssh keys and enter in the information as neccassary.
+
+Switching branches
+
+Step 1:
+The first thing to do when doing this is to create and switch to the new brach this can be done by this code:
+	git checkout -b (new branch name)
+This will create and switch you to the new branch
+
+Step 2: 
+The next step in creating the new branch is to create the remote for the new branch for commiting the files to it
+This can be done by using this code:
+git remote add (remote name) (url of the repo)
+
+Step 3:
+Finiallty just commit a file to the branch to confirm that everything is working.
