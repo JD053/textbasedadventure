@@ -1,4 +1,5 @@
 #!/bin/bash
+clear
 health=100
 
 #playername 
@@ -84,26 +85,105 @@ echo "You turn around seeing a soldier running at you with a rasied sword"
 sleep 1
 echo ""
 
-until [[ $fstatk == "dodge" ]] || [[ $fstatk == "block" ]] || [[ $fstatk == "attack" ]]; do
+until [[ $1statk == "dodge" ]] || [[ $1statk == "block" ]] || [[ $1statk == "attack" ]]; do
 
 #enemy health 
 enehlt=20
 
 echo "What do you do?"
-read fstatk
+read 1statk
 dmg=$(( (RANDOM % 20) + 1))
 healthloss=$(( (RANDOM % 20) + 1))
 #first attack
-	case $fstatk in
+	case $1statk in
 		dodge ) echo "you roll to your left just barely avoiding the attack"
 		;;
 		block ) echo "You put your $weapon in front of the incoming attack, stopping the blades inches from your face"
 		;;
-		attack ) echo "20 - $dmg"
+		attack ) echo "you attack with your $weapon doing $(( $enehlt-$dmg = $enehlt )) damage to the foe"
 		;;
 		* ) echo "You take `$health - $healthloss` damage"
 		;; 
 	esac 
-done
 
-if 
+
+if [[ $enehlt > 0 ]] || [[ $1statk == "attack" ]]; then 
+	echo "You strike your $weapon into the enemy, however he still has $enehlt left" 
+	sleep 2
+	echo ""
+
+	until [[ $2ndatk == "dodge" ]] || [[ $2ndatk == "block" ]] || [[ $2ndatk == "attack" ]]; do
+
+	echo "What do you do now?"
+	read 2ndatk
+	dmg=$(((RANDOM % 20)+1))
+	healthloss=$(((RANDOM%20)+1)) 
+	case $1statk in
+                dodge ) echo "you roll to your left just barely avoiding the attack"
+                ;;
+                block ) echo "You put your $weapon in front of the incoming attack, stopping the blades inches from your face"
+                ;;
+                attack ) echo "you attack with your $weapon doing $(( $enehlt-$dmg = $enehlt )) damage to the foe"
+                ;;
+                * ) echo "You take `$health - $healthloss` damage"
+                ;;
+        esac
+fi 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
